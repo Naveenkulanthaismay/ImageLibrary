@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("maven-publish")
+    id(id = "maven-publish")
 }
 
 android {
@@ -37,14 +37,15 @@ dependencies {
 
     implementation(libs.glide)
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                from (components["release"])
-                groupId = "com.github.Naveenkulanthaismay"
-                artifactId = "ImageLibrary"
-                version = "1.0.5"
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.example.image_viewer"
+            artifactId = "ImageLibrary"
+            version = "1.0.5"
+
+            afterEvaluate {
+                from(components["release"])
             }
         }
     }
