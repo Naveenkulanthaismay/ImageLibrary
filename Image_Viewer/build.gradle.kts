@@ -42,9 +42,9 @@ afterEvaluate {
         publications {
             create<MavenPublication>("maven") {
                 from (components["release"])
-                groupId = "com.github.naveenkulanthaisamy"
-                artifactId = "image-library"
-                version = "1.0.3"
+                groupId = "com.github.Naveenkulanthaismay"
+                artifactId = "ImageLibrary"
+                version = "1.0.5"
             }
         }
     }
